@@ -1,4 +1,15 @@
+certifi==2018.11.29
+chardet==3.0.4
 Django==2.1.7
+django-rest-auth==0.9.3
 djangorestframework==3.9.2
+get==2018.11.19
+idna==2.8
 Pillow==5.4.1
+post==2018.11.20
+public==2018.11.20
 pytz==2018.9
+query-string==2018.11.20
+requests==2.21.0
+six==1.12.0
+urllib3==1.24.1
