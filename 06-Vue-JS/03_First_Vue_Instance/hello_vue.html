@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Vue</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <!-- <h1 v-text="message"></h1> -->
+
+        <h3>{{ value }}</h3>
+        <h2>{{ value * 5 }}</h2>
+        <h2>{{ "Hello" + " Vue!" }}</h2>
+        <h2>{{ (33/11) * 5 }}</h2>
+        <h2>{{ Math.random() }}</h2>
+        <h2>{{ message.split('').reverse().join('') }}</h2>
+
+        <!-- <img v-bind:src="imgSrc">
+        <a v-bind:href="link">Official Website</a> -->
+        
+        <img :src="imgSrc">
+        <a :href="link">Official Website</a>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main.js"></script>
+</body>
+</html>
