@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Computed Properties</title>
+</head>
+<body>
+
+    <div id="app">
+        <p>Method - 1: {{ getRandomNumber() }}</p>
+        <p>Method - 2: {{ getRandomNumber() }}</p>
+        <p>Method - 3: {{ getRandomNumber() }}</p>
+        <hr>
+        <p>Computed - 1: {{ getRandomComputed }}</p>
+        <p>Computed - 2: {{ getRandomComputed }}</p>
+        <p>Computed - 3: {{ getRandomComputed }}</p>
+        <br>
+        <h3>Full Name: {{ fullName }}</h3>
+        <h3>Reversed Full Name: {{ reversedFullName }}</h3>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
