@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms and User Input</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <div id="app">
+        <div class="row justify-content-center mt-3">
+            <div class="col-5"> 
+                <p>Write a message!</p>
+                <textarea class="form-control"
+                          v-model="text"
+                          placeholder="write something!" 
+                          cols="60" 
+                          rows="5"
+                ></textarea>
+            </div>
+            <div class="col-5">
+                <p>Message</p>
+                <p>{{ text }}</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <input type="checkbox" id="checkbox" v-model="checked">
+            <label for="checkbox">&nbsp;&nbsp;Value: {{ checked }}</label>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <select v-model="city">
+                <option>Rome</option>
+                <option>New York</option>
+                <option>Shenzen</option>
+                <option>London</option>
+                <option>Mumbai</option>
+            </select>    
+            <span>&nbsp;&nbsp;City: {{ city }}</span>
+        </div>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+    <script src="main.2.js"></script>
+</body>
+</html>

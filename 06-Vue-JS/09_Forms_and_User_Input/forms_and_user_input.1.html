@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms and User Input</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <div class="row justify-content-center mt-3">
+            <div class="circle"
+                 v-bind:style="{ backgroundColor: color }">
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <input type="text" v-model="color">
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <p>Color Data: {{ color }}</p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+    <script src="main.1.js"></script>
+</body>
+</html>
