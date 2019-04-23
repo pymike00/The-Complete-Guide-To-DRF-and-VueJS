@@ -4,7 +4,7 @@ The source code of my course *The Complete Guide to Django REST Framework and Vu
 
 This is an intermediate/advanced level course, therefore knowledge of Python, Django, HTML, CSS and JavaScript is assumed.
 
-Enroll now if you want to learn how to build professional REST APIs with Django REST Framework, powerful Reactive Components with Vue JS and Single Page Applications like using both Django and Vue JS.
+Enroll now if you want to learn how to build professional REST APIs with Django REST Framework, powerful Reactive Components with Vue JS and Single Page Applications using both Django and Vue JS.
 
 The course is available in both English and Italian:
 
