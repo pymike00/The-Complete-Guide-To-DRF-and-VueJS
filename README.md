@@ -8,7 +8,7 @@ Enroll now if you want to learn how to build professional REST APIs with Django 
 
 The course is available in both English and Italian:
 
-English Version: [ENROLL NOW](https://www.udemy.com/the-complete-guide-to-django-rest-framework-and-vue-js/?couponCode=PROMO_LAUNCH)
+English Version: [ENROLL NOW](https://www.udemy.com/the-complete-guide-to-django-rest-framework-and-vue-js/?couponCode=GITHUB_PROMO)
 
 VERSIONE ITALIANA: [ISCRIVITI ORA](https://www.udemy.com/guida-per-sviluppatori-a-django-rest-framework-e-vue-js/?couponCode=OFFERTA_LANCIO)
 
