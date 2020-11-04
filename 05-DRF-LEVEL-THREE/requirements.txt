@@ -8,7 +8,7 @@ djangorestframework==3.9.2
 get==2018.11.19
 idna==2.8
 oauthlib==3.0.1
-Pillow==5.4.1
+Pillow==7.1.0
 post==2018.11.20
 public==2018.11.20
 python3-openid==3.1.0
