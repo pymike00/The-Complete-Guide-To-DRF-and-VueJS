@@ -43,6 +43,11 @@ def manufacturer_list(request):
 def manufacturer_detail(request, pk):
     try:
         manufacturer = Manufacturer.objects.get(pk=pk)
+    except Manufacturer.DoesNotExist:
+        response = JsonResponse(
+            {"error": {"code": 404, "message": "manufacturer not found!"}}, status=404
+        )
+    else:
         manufacturer_products = manufacturer.products.all()
         data = {
             "manufacturer": {
@@ -53,10 +58,6 @@ def manufacturer_detail(request, pk):
             }
         }
         response = JsonResponse(data)
-    except Manufacturer.DoesNotExist:
-        response = JsonResponse(
-            {"error": {"code": 404, "message": "manufacturer not found!"}}, status=404
-        )
     return response
 
 
