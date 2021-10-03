@@ -2,26 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>List Rendering</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .container {
+            margin: 30px;
+        }
+    </style>
 </head>
 <body>
 
     <div id="app">
-        <h1>Users List</h1>
-        <div class="card" 
-             v-for="user in users"
-             :key="user.id">
-            <div class="card-body">
-                <p><strong>Name:</strong> {{ user.name }}</p>
-                <p><strong>Profession:</strong> {{ user.profession }}</p>
+        <div class="container">
+            <h1>List of Users</h1>
+            <div v-for="user in users"
+                 :key="user.id"
+                >
+                <div class="container">
+                    <p><strong>User:</strong> {{ user.name }}</p>
+                    <p><strong>Profession:</strong> {{ user.profession }}</p>
+                </div>
+                <hr>
             </div>
         </div>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="main.js"></script>
 </body>
 </html>

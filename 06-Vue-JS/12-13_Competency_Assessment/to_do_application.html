@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>To Do Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        .no-outline {
+            outline: 0 !important;
+        }
+        .no-outline:not(:disabled):not(.disabled):focus {
+            color: #6c757d;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <to-do :tasks="tasks" 
+               :remaining="taskCount" 
+               @add-task="addNewTask" 
+               @remove-task="removeTask"
+               >
+        </to-do>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="todo.js"></script>
+</body>
+</html>

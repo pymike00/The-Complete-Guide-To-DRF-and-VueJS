@@ -1,4 +1,30 @@
-Vue.component("comment", {
+const app = Vue.createApp({
+    data() {
+        return {
+            comments: [
+                {
+                    username: "alice",
+                    content: "First Comment!"
+                },
+                {
+                    username: "bob",
+                    content: "Hello World!"
+                },
+                {
+                    username: "ironman",
+                    content: "New Armor Coming Soon!"
+                },
+                {
+                    username: "superman",
+                    content: "Kryptonite is Bad!"
+                },
+            ]
+        }
+    }
+});
+
+
+app.component("comment", {
     props: {
         comment: {
             type: Object,
@@ -8,22 +34,13 @@ Vue.component("comment", {
     template: `
         <div>
             <div class="card-body">
-                <p>{{ comment.username }}</p>
+                <strong><p>{{ comment.username }}</p></strong>
                 <p>{{ comment.content }}</p>
-            </div> 
+            </div>
             <hr>
         </div>
     `
-})
+});
 
-var app = new Vue({
-    el: "#app",
-    data: {
-        comments: [
-            { username: "alice", content: "first comment!"},
-            { username: "bob", content: "hello world!"},
-            { username: "ironman", content: "new armor coming soon!"},
-            { username: "superman", content: "kryptonite is bad!"}
-        ]
-    }
-})
+
+const mountedApp = app.mount('#app');

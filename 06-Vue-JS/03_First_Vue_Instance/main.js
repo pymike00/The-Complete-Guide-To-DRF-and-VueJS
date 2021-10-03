@@ -1,9 +1,13 @@
-var app = new Vue({
-    el: '#app',
-    data: {
-        message: "Hello World!",
-        value: 5,
-        imgSrc: "https://cdn.pixabay.com/photo/2011/12/14/12/23/solar-system-11111_960_720.jpg",
-        link: "https://vuejs.org"
-    }
-})
+const app = Vue.createApp({
+  data() {
+    return {
+      message: "Hello World!",
+      num: 5,
+      img:
+        "https://cdn.pixabay.com/photo/2016/11/29/03/36/beautiful-1867093_1280.jpg",
+      link: "https://vuejs.org",
+    };
+  },
+});
+
+const mountedApp = app.mount("#app");
