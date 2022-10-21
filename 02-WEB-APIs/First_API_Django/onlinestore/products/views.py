@@ -6,8 +6,7 @@ from .models import Manufacturer, Product
 def product_list(request):
     products = Product.objects.all()  # [:30]
     data = {"products": list(products.values())}  # .values("pk", "name")
-    response = JsonResponse(data)
-    return response
+    return JsonResponse(data)
 
 
 def product_detail(request, pk):
@@ -36,8 +35,7 @@ def product_detail(request, pk):
 def manufacturer_list(request):
     manufacturers = Manufacturer.objects.filter(active=True)
     data = {"manufacturers": list(manufacturers.values())}
-    response = JsonResponse(data)
-    return response
+    return JsonResponse(data)
 
 
 def manufacturer_detail(request, pk):

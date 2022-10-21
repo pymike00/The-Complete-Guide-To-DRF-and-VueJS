@@ -30,7 +30,7 @@ class ProfileViewSetTestCase(APITestCase):
         self.api_authentication()
 
     def api_authentication(self):
-        self.client.credentials(HTTP_AUTHORIZATION="Token " + self.token.key)
+        self.client.credentials(HTTP_AUTHORIZATION=f"Token {self.token.key}")
 
     def test_profile_list_authenticated(self):
         response = self.client.get(self.list_url)
@@ -76,7 +76,7 @@ class ProfileStatusViewSetTestCase(APITestCase):
         self.api_authentication()
 
     def api_authentication(self):
-        self.client.credentials(HTTP_AUTHORIZATION="Token " + self.token.key)
+        self.client.credentials(HTTP_AUTHORIZATION=f"Token {self.token.key}")
 
     def test_status_list_authenticated(self):
         response = self.client.get(self.url)

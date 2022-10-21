@@ -19,8 +19,7 @@ class ArticleSerializer(serializers.ModelSerializer):
     def get_time_since_publication(self, object):
         publication_date = object.publication_date
         now = datetime.now()
-        time_delta = timesince(publication_date, now)
-        return time_delta
+        return timesince(publication_date, now)
 
     def validate(self, data):
         """ check that description and title are different 

@@ -15,8 +15,7 @@ class AvatarUpdateView(generics.UpdateAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
-        profile_object = self.request.user.profile
-        return profile_object
+        return self.request.user.profile
 
 
 class ProfileViewSet(mixins.UpdateModelMixin,

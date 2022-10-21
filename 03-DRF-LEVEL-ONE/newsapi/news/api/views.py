@@ -26,8 +26,7 @@ class ArticleListCreateAPIView(APIView):
 class ArticleDetailAPIView(APIView):
 
     def get_object(self, pk):
-        article = get_object_or_404(Article, pk=pk)
-        return article
+        return get_object_or_404(Article, pk=pk)
 
     def get(self, request, pk):
         article = self.get_object(pk)

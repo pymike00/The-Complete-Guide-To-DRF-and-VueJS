@@ -19,7 +19,7 @@ def client():
                             headers=headers)
 
     print("Status Code: ", response.status_code)
-    
+
     response_data = response.json()
     print(response_data)
 
