@@ -10,7 +10,7 @@ django-rest-auth==0.9.5
 djangorestframework==3.12.2
 idna==2.10
 oauthlib==3.1.0
-Pillow==9.0.1
+Pillow==9.3.0
 pycparser==2.20
 PyJWT==1.7.1
 python3-openid==3.2.0
