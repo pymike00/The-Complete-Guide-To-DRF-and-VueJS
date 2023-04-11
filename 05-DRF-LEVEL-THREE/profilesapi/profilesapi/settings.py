@@ -33,9 +33,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
-    'rest_auth',
-    'rest_auth.registration',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
 
     'profiles'
 ]
@@ -132,7 +131,7 @@ REST_FRAMEWORK = {
     )
 }
 
+# dj-rest-auth / allauth settings
 SITE_ID = 1
-
 ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_EMAIL_REQUIRED = (True)
