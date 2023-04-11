@@ -1,7 +1,7 @@
 import requests
 
 
-def registration(account_data: dict) -> str:
+def registration(account_data: dict):
     registration_endpoint = "http://127.0.0.1:8000/api/dj-rest-auth/registration/"
     response = requests.post(registration_endpoint, data=account_data)
     print(response)
