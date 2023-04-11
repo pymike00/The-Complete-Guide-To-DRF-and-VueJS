@@ -1,7 +1,7 @@
 import requests
 
 
-def registration(account_data: dict):
+def registration(account_data: dict) -> None:
     registration_endpoint = "http://127.0.0.1:8000/api/dj-rest-auth/registration/"
     response = requests.post(registration_endpoint, data=account_data)
     print(response)
@@ -18,7 +18,7 @@ def login(login_credentials: dict) -> str:
         return auth_token
 
 
-def client(auth_token: str, endpoint: str):
+def client(auth_token: str, endpoint: str) -> None:
     token_h = f"Token {auth_token}"
     headers = {"Authorization": token_h}
     response = requests.get(endpoint, headers=headers)
