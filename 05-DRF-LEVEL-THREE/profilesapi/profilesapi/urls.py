@@ -1,7 +1,7 @@
 """profilesapi URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.1/topics/http/urls/
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from dj_rest_auth import urls
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("profiles.api.urls")),
     path("api-auth/", include("rest_framework.urls")),
-    path("api/rest-auth/", include("rest_auth.urls")),
-    path("api/rest-auth/registration/", include("rest_auth.registration.urls"))
+
+    path("api/dj-rest-auth/", include("dj_rest_auth.urls")),
+    path("api/dj-rest-auth/registration/", include("dj_rest_auth.registration.urls")),
 ]
 
 from django.conf.urls.static import static
