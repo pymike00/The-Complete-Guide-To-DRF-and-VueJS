@@ -11,21 +11,24 @@ from profiles.models import ProfileStatus
 
 
 class RegistrationTestCase(APITestCase):
-
     def test_registration(self):
-        data = {"username": "testcase", "email": "test@localhost.app",
-                "password1": "some_strong_psw", "password2": "some_strong_psw"}
+        data = {
+            "username": "testcase",
+            "email": "test@localhost.app",
+            "password1": "some_strong_psw",
+            "password2": "some_strong_psw",
+        }
         response = self.client.post("/api/dj-rest-auth/registration/", data)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
 
 class ProfileViewSetTestCase(APITestCase):
-
     list_url = reverse("profile-list")
 
     def setUp(self):
-        self.user = User.objects.create_user(username="davinci",
-                                             password="some-very-strong-psw")
+        self.user = User.objects.create_user(
+            username="davinci", password="some-very-strong-psw"
+        )
         self.token = Token.objects.create(user=self.user)
         self.api_authentication()
 
@@ -47,31 +50,43 @@ class ProfileViewSetTestCase(APITestCase):
         self.assertEqual(response.data["user"], "davinci")
 
     def test_profile_update_by_owner(self):
-        response = self.client.put(reverse("profile-detail", kwargs={"pk": 1}),
-                                   {"city": "Anchiano", "bio": "Renaissance Genius"})
+        response = self.client.put(
+            reverse("profile-detail", kwargs={"pk": 1}),
+            {"city": "Anchiano", "bio": "Renaissance Genius"},
+        )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(json.loads(response.content),
-                         {"id": 1, "user": "davinci", "bio": "Renaissance Genius",
-                          "city": "Anchiano", "avatar": None})
+        self.assertEqual(
+            json.loads(response.content),
+            {
+                "id": 1,
+                "user": "davinci",
+                "bio": "Renaissance Genius",
+                "city": "Anchiano",
+                "avatar": None,
+            },
+        )
 
     def test_profile_update_by_random_user(self):
-        random_user = User.objects.create_user(username="random", 
-                                               password="psw123123123")
+        random_user = User.objects.create_user(
+            username="random", password="psw123123123"
+        )
         self.client.force_authenticate(user=random_user)
-        response = self.client.put(reverse("profile-detail", kwargs={"pk": 1}),
-                                   {"bio": "hacked!!!"})
+        response = self.client.put(
+            reverse("profile-detail", kwargs={"pk": 1}), {"bio": "hacked!!!"}
+        )
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
 
 class ProfileStatusViewSetTestCase(APITestCase):
-
     url = reverse("status-list")
 
     def setUp(self):
-        self.user = User.objects.create_user(username="davinci",
-                                             password="some-very-strong-psw")
-        self.status = ProfileStatus.objects.create(user_profile=self.user.profile,
-                                                   status_content="status test")
+        self.user = User.objects.create_user(
+            username="davinci", password="some-very-strong-psw"
+        )
+        self.status = ProfileStatus.objects.create(
+            user_profile=self.user.profile, status_content="status test"
+        )
         self.token = Token.objects.create(user=self.user)
         self.api_authentication()
 
@@ -103,16 +118,19 @@ class ProfileStatusViewSetTestCase(APITestCase):
 
     def test_status_update_owner(self):
         data = {"status_content": "content updated"}
-        response = self.client.put(reverse("status-detail", kwargs={"pk": 1}),
-                                   data=data)
+        response = self.client.put(
+            reverse("status-detail", kwargs={"pk": 1}), data=data
+        )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["status_content"], "content updated")
 
     def test_status_update_random_user(self):
-        random_user = User.objects.create_user(username="random", 
-                                               password="psw123123123")
+        random_user = User.objects.create_user(
+            username="random", password="psw123123123"
+        )
         self.client.force_authenticate(user=random_user)
         data = {"status_content": "You Have Been Hacked!"}
-        response = self.client.put(reverse("status-detail", kwargs={"pk": 1}),
-                                   data=data)
+        response = self.client.put(
+            reverse("status-detail", kwargs={"pk": 1}), data=data
+        )
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
