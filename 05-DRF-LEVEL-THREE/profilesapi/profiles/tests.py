@@ -15,8 +15,8 @@ class RegistrationTestCase(APITestCase):
     def test_registration(self):
         data = {"username": "testcase", "email": "test@localhost.app",
                 "password1": "some_strong_psw", "password2": "some_strong_psw"}
-        response = self.client.post("/api/rest-auth/registration/", data)
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        response = self.client.post("/api/dj-rest-auth/registration/", data)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
 
 class ProfileViewSetTestCase(APITestCase):
