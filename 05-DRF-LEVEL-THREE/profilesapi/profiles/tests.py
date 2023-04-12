@@ -6,8 +6,8 @@ from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase
 
-from profiles.api.serializers import ProfileSerializer, ProfileStatusSerializer
-from profiles.models import Profile, ProfileStatus
+from profiles.api.serializers import ProfileStatusSerializer
+from profiles.models import ProfileStatus
 
 
 class RegistrationTestCase(APITestCase):
